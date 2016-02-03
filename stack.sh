@@ -679,12 +679,6 @@ fi
 
 # OpenStack uses a fair number of other projects.
 
-
-# Bring down global requirements before any use of pip_install. This is
-# necessary to ensure that the constraints file is in place before we
-# attempt to apply any constraints to pip installs.
-git_clone $REQUIREMENTS_REPO $REQUIREMENTS_DIR $REQUIREMENTS_BRANCH
-
 # Install package requirements
 # Source it so the entire environment is available
 echo_summary "Installing package prerequisites"
@@ -694,9 +688,6 @@ source $TOP_DIR/tools/install_prereqs.sh
 if [[ "$OFFLINE" != "True" ]]; then
     PYPI_ALTERNATIVE_URL=${PYPI_ALTERNATIVE_URL:-""} $TOP_DIR/tools/install_pip.sh
 fi
-
-# Install subunit for the subunit output stream
-pip_install_gr os-testr
 
 TRACK_DEPENDS=${TRACK_DEPENDS:-False}
 
@@ -720,6 +711,11 @@ source $TOP_DIR/tools/fixup_stuff.sh
 
 # Install required infra support libraries
 install_infra
+
+# NEVER USE pip_install_gr BEFORE THIS POINT
+
+# Install subunit for the subunit output stream
+pip_install_gr os-testr
 
 # Pre-build some problematic wheels
 if [[ -n ${WHEELHOUSE:-} && ! -d ${WHEELHOUSE:-} ]]; then
