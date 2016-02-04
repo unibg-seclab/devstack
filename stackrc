@@ -158,6 +158,9 @@ REQUIREMENTS_MODE=${REQUIREMENTS_MODE:-strict}
 # Another option is https://git.openstack.org
 GIT_BASE=${GIT_BASE:-git://git.openstack.org}
 
+# The location of REQUIREMENTS once cloned
+REQUIREMENTS_DIR=$DEST/requirements
+
 # Which libraries should we install from git instead of using released
 # versions on pypi?
 #
