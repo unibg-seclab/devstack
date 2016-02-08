@@ -231,8 +231,10 @@ NOVA_REPO=${NOVA_REPO:-${GIT_BASE}/openstack/nova.git}
 NOVA_BRANCH=${NOVA_BRANCH:-stable/liberty}
 
 # object storage service
-SWIFT_REPO=${SWIFT_REPO:-${GIT_BASE}/openstack/swift.git}
-SWIFT_BRANCH=${SWIFT_BRANCH:-stable/liberty}
+#SWIFT_REPO=${SWIFT_REPO:-${GIT_BASE}/openstack/swift.git}
+#SWIFT_BRANCH=${SWIFT_BRANCH:-stable/liberty}
+SWIFT_REPO=${SWIFT_REPO:-https://github.com/unibg-seclab/swift}
+SWIFT_BRANCH=${SWIFT_BRANCH:-seclab_swift}
 
 ##############
 #
