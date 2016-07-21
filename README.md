@@ -1,5 +1,18 @@
 DevStack is a set of scripts and utilities to quickly deploy an OpenStack cloud.
 
+# Seclab Devstack
+It differs from the official Devstack repo for the Swift version that it clones.
+In `stackrc` the Swift repo has been changed from
+
+    SWIFT_REPO=${SWIFT_REPO:-${GIT_BASE}/openstack/swift.git}
+    SWIFT_BRANCH=${SWIFT_BRANCH:-stable/liberty}
+
+to
+
+    SWIFT_REPO=${SWIFT_REPO:-https://github.com/unibg-seclab/swift}
+    SWIFT_BRANCH=${SWIFT_BRANCH:-seclab_swift}
+
+
 # Goals
 
 * To quickly build dev OpenStack environments in a clean Ubuntu or Fedora
