@@ -253,7 +253,8 @@ NOVA_REPO=${NOVA_REPO:-${GIT_BASE}/openstack/nova.git}
 NOVA_BRANCH=${NOVA_BRANCH:-stable/ocata}
 
 # object storage service
-SWIFT_REPO=${SWIFT_REPO:-${GIT_BASE}/openstack/swift.git}
+# SWIFT_REPO=${SWIFT_REPO:-${GIT_BASE}/openstack/swift.git}
+SWIFT_REPO=${SWIFT_REPO:-https://github.com/unibg-seclab/swift.git}
 SWIFT_BRANCH=${SWIFT_BRANCH:-stable/ocata}
 
 ##############
